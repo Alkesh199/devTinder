@@ -2,11 +2,12 @@ const express = require("express");
 // creating app using express
 const app = express();
 
+// handling dynamic routing 
 app.get("/user/:uid/:name/:password",(req,res)=>{
     console.log(req.params);
     res.send("get call with some query params");
 })
-// handling /user get call
+// handling /user get call, also getting if there are some query passed with routing or 
 app.get("/user",(req,res)=>{
     // reading queryParams
     console.log(req.query);

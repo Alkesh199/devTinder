@@ -2,10 +2,17 @@ const express = require("express");
 // creating app using express
 const app = express();
 
+app.get("/user/:uid/:name/:password",(req,res)=>{
+    console.log(req.params);
+    res.send("get call with some query params");
+})
 // handling /user get call
 app.get("/user",(req,res)=>{
+    // reading queryParams
+    console.log(req.query);
     res.send({name:"Alkesh Kumar",uid:"101"});
 })
+
 
 //handling /user post call
 app.post("/user",(req,res)=>{
